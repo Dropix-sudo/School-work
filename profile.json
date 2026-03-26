@@ -1,5 +1,6 @@
 {
   "name": "Richard Svoboda",
+  "aboutMe": "Jsem IT student, kterého baví svět technologií, kódování a gamingu. Rád se učím nové věci a snažím se neustále posouvat své hranice.",
   "skills": [
     "Python",
     "C#",
@@ -7,11 +8,8 @@
     "CSS"
   ],
   "interests": [
-    "Hraní Počítačových her",
-    "Sledování seriálů",
-    "Nakupování nového hardwaru"
-  ]
-  "myway": [
-    "Jsem na cestě k tomu stát se dokonalým ajťákem který dokáže naprogramovat cokoliv :)"
-  ]
+    "Hraní PC her (hlavně Valorant)",
+    "Koukání na seriály"
+  ],
+  "goals": "Mým cílem je dokončit střední školu bez užití návykových látek a léků na depresi, stát se fakt dobrým ajťákem a hlavně... dát rank Radiant ve Valorantu!"
 }
