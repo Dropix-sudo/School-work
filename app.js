@@ -34,7 +34,15 @@ fetch('profile.json')
         document.getElementById('goals').textContent = data.goals;
     })
     .catch(error => {
-        console.error('Došlo k chybě při načítání dat:', error);
-        document.getElementById('name').textContent = "Chyba při načítání profilu.";
-    });
+        console.error('Chyba:', error);
+        
+        // Vylepšené ošetření chyby - rovnou ti to řekne, co máš dělat
+        document.getElementById('name').textContent = "⚠️ Nelze načíst data";
+        
+        const aboutMe = document.getElementById('about-me');
+        aboutMe.textContent = "Prohlížeč blokuje načtení 'profile.json' z lokálního disku. Aby se tvůj profil (včetně cíle na Radianta) zobrazil, musíš kód nahrát na GitHub a spustit přes GitHub Pages, nebo použít lokální server ve VS Code.";
+        aboutMe.style.display = "block";
+        aboutMe.style.backgroundColor = "#fce8e6";
+        aboutMe.style.borderLeftColor = "#d93025";
+        aboutMe.style.color = "#d93025";
     });
