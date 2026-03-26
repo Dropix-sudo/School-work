@@ -6,10 +6,11 @@ fetch('profile.json')
         return response.json();
     })
     .then(data => {
-        // 1. Vložení jména do <h1>
+        // Jméno a představení
         document.getElementById('name').textContent = data.name;
+        document.getElementById('about-me').textContent = data.aboutMe;
 
-        // 2. Vygenerování seznamu dovedností
+        // Dovednosti
         const skillsList = document.getElementById('skills');
         data.skills.forEach(skill => {
             const li = document.createElement('li');
@@ -17,29 +18,23 @@ fetch('profile.json')
             skillsList.appendChild(li);
         });
 
-        // 3. Vygenerování zájmů
+        // Zájmy
         const interestsSection = document.getElementById('interests');
-        const ul = document.createElement('ul'); // Vytvoříme seznam pro zájmy
+        const ul = document.createElement('ul'); 
         
         data.interests.forEach(interest => {
             const li = document.createElement('li');
             li.textContent = interest;
             ul.appendChild(li);
         });
-        // 3. Vygenerování zájmů
-        const mywaySection = document.getElementById('myway');
-        const ul = document.createElement('ul'); // Vytvoříme seznam pro zájmy
         
-        data.myway.forEach(interest => {
-            const li = document.createElement('li');
-            li.textContent = myway;
-            ul.appendChild(li);
-        });
-        mywaySection.appendChild(ul);
         interestsSection.appendChild(ul);
+
+        // Cíle
+        document.getElementById('goals').textContent = data.goals;
     })
     .catch(error => {
-        // Ošetření chyby podle zadání
         console.error('Došlo k chybě při načítání dat:', error);
         document.getElementById('name').textContent = "Chyba při načítání profilu.";
+    });
     });
