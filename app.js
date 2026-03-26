@@ -26,7 +26,16 @@ fetch('profile.json')
             li.textContent = interest;
             ul.appendChild(li);
         });
+        // 3. Vygenerování zájmů
+        const mywaySection = document.getElementById('myway');
+        const ul = document.createElement('ul'); // Vytvoříme seznam pro zájmy
         
+        data.myway.forEach(interest => {
+            const li = document.createElement('li');
+            li.textContent = myway;
+            ul.appendChild(li);
+        });
+        mywaySection.appendChild(ul);
         interestsSection.appendChild(ul);
     })
     .catch(error => {
